@@ -24,7 +24,7 @@ var server = http.createServer(function (request, response) {
     console.log('方方说：含查询字符串的路径\n' + pathWithQuery)
 
     if (path === '/') {
-        var string = fs.readFileSync('./index5.html','utf-8')
+        var string = fs.readFileSync('./index4.html','utf-8')  //这个是要请求到的html文件
         var amount = fs.readFileSync('./db','utf-8')
         string = string.replace('&&&amount&&&',amount)
         response.statusCode = 200

@@ -26,7 +26,7 @@
                     e.currentTarget.remove()
                     delete window[functionName] // 请求完了就干掉这个随机函数
                 }
-                script.onload = function (e) { // 状态码大于等于 400 则表示失败
+                script.onerror = function (e) { // 状态码大于等于 400 则表示失败
                     e.currentTarget.remove()
                     delete window[functionName] // 请求完了就干掉这个随机函数
                 }
