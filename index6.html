@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>您的账户余额为：
+        <span id='amount'>&&&amount&&&</span>
+    </div>
+    <button id='button'>付款</button>
+    <script>
+        button.addEventListener('click', (e) => {
+            let request = new XMLHttpRequest()
+            request.open('post', '/pay') // 配置request
+            request.send()
+            request.onreadystatechange = () => {
+                if (request.readyState === 4) {
+                    if (request.status >= 200 && request.status < 300) {
+                        amount.innerText = amount.innerText - 1
+                    } else if (request.status >= 400) {
+                        console.log('打钱失败')
+                    }
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
