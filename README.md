@@ -15,3 +15,6 @@
 
 ## index5.html
 这个是利用jquery模拟JSONP
+
+## index6.html
+这个是实现了用ajax发送请求
